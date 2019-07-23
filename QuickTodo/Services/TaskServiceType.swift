@@ -31,6 +31,8 @@ enum TaskServiceError: Error {
   case toggleFailed(TaskItem)
 }
 
+typealias TaskStatistics = (todo: Int, done: Int)
+
 protocol TaskServiceType {
     
     @discardableResult
@@ -44,6 +46,10 @@ protocol TaskServiceType {
     
     @discardableResult
     func toggle(task: TaskItem) -> Observable<TaskItem>
+    
+    func countOfTasks() -> Observable<Int>
+    
+    func statistics() -> Observable<TaskStatistics>
     
     func tasks() -> Observable<Results<TaskItem>>
     

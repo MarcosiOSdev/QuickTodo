@@ -26,12 +26,12 @@
                   moduleName = "QuickTodo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcosfelipesouza/Downloads/RxSwift%20Reactive%20Programming%20with%20Swift_Code/24-building-complete-rxswift-app/starter/QuickTodo/QuickTodo/Scenes/SceneCoordinator.swift"
-                  timestampString = "585462891.016186"
+                  timestampString = "585463476.320784"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "67"
                   endingLineNumber = "67"
-                  offsetFromSymbolStart = "1780">
+                  offsetFromSymbolStart = "1452">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,30 +41,14 @@
                   moduleName = "QuickTodo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcosfelipesouza/Downloads/RxSwift%20Reactive%20Programming%20with%20Swift_Code/24-building-complete-rxswift-app/starter/QuickTodo/QuickTodo/Scenes/SceneCoordinator.swift"
-                  timestampString = "585462891.019423"
+                  timestampString = "585463476.323094"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "68"
                   endingLineNumber = "68"
-                  offsetFromSymbolStart = "22">
+                  offsetFromSymbolStart = "52">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuickTodo/Scenes/SceneCoordinator.swift"
-            timestampString = "585462842.2871701"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "transition(to:type:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

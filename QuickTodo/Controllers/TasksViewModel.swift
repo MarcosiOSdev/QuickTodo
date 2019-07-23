@@ -56,6 +56,8 @@ struct TasksViewModel {
     }(self.taskService)
     
     
+    
+    //MARK: - Output
     var sectionedItems: Observable<[TaskSection]> {
         return self.taskService.tasks().map { results in
             
@@ -77,6 +79,9 @@ struct TasksViewModel {
             ]
         }
     }
+    
+    // Challenge - 2
+    
     
     init(taskService: TaskServiceType, coordinator: SceneCoordinatorType) {
         self.taskService = taskService
