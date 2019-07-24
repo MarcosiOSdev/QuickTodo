@@ -49,6 +49,13 @@ class TasksViewController: UIViewController, BindableType {
     
     //function do BindableType que é iniciada logo apos o viewDidLoad
     func bindViewModel() {
+        
+        viewModel.statisticCount
+            .subscribe(onNext: { [weak self] element in                
+                let total = element.done + element.todo
+                self?.statisticsLabel.text = "\(element.done) dones of \(total) items"
+                
+            }).disposed(by: bag)
 
         viewModel
             .sectionedItems

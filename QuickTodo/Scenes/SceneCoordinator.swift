@@ -64,10 +64,14 @@ class SceneCoordinator: SceneCoordinatorType {
             currentViewController = SceneCoordinator.actualViewController(for: viewController)
             
         case .modal:
-            currentViewController.present(viewController, animated: true) {
-                subject.onCompleted()
+            if let nav = viewController.navigationController {
+                nav.modalPresentationStyle = .overCurrentContext
+                currentViewController.present(nav, animated: true) {
+                    subject.onCompleted()
+                }
+                currentViewController = SceneCoordinator.actualViewController(for: nav)
             }
-            currentViewController = SceneCoordinator.actualViewController(for: viewController)
+            
         }
         return subject.asObservable()
             .take(1)

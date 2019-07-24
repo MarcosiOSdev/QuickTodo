@@ -120,19 +120,19 @@ struct TaskService: TaskServiceType {
             let count = realm.objects(TaskItem.self).count
             return .just(count)
         }
-        return result ?? .empty()
+        return result ?? .of(0)
     }
     
     func statistics() -> Observable<TaskStatistics> {
         let result = withRealm("count of todo") { realm -> Observable<TaskStatistics> in
-            let realm = try Realm()
             let allTasks = realm.objects(TaskItem.self)
             let todoTasks = allTasks.filter("checked == nil")
             
-            let observableTasks = Observable.just(allTasks.count)
-            let observableTodoTasks = Observable.just(todoTasks.count)
+            let observableTasks = Observable.collection(from: allTasks)
+            let observableTodoTasks = Observable.collection(from: todoTasks)
             
-            return .combineLatest(observableTasks, observableTodoTasks) { all, todo in
+            return .combineLatest(observableTasks.map { $0.count },
+                                  observableTodoTasks.map { $0.count }) { all, todo in
                 (todo: todo, done: all - todo)
             }
         }

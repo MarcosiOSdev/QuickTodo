@@ -80,7 +80,8 @@ struct TasksViewModel {
         }
     }
     
-    // Challenge - 2
+    //Challenge 2
+    lazy var statisticCount: Observable<TaskStatistics> = self.taskService.statistics()
     
     
     init(taskService: TaskServiceType, coordinator: SceneCoordinatorType) {
@@ -118,7 +119,7 @@ struct TasksViewModel {
                                                           cancelAction: self.onDelete(task: task))
                     
                     return self.sceneCoordinator
-                        .transition(to: Scene.editTask(editModelView), type: .push)
+                        .transition(to: Scene.editTask(editModelView), type: .modal)
                         .asObservable()
                         .map {_ in} // por causa do Observable<Void> o map vazio
             }
